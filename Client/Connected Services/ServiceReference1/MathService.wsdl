@@ -3,6 +3,7 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ArupConsoleService" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
@@ -12,10 +13,14 @@
   <wsdl:message name="IMathService_Addition_OutputMessage">
     <wsdl:part name="parameters" element="tns:AdditionResponse" />
   </wsdl:message>
+  <wsdl:message name="IMathService_Addition_AppFaultDataFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ArupConsoleService" name="detail" element="q1:AppFaultData" />
+  </wsdl:message>
   <wsdl:portType name="IMathService">
     <wsdl:operation name="Addition">
       <wsdl:input wsaw:Action="http://tempuri.org/IMathService/Addition" message="tns:IMathService_Addition_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMathService/AdditionResponse" message="tns:IMathService_Addition_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMathService/AdditionAppFaultDataFault" name="AppFaultDataFault" message="tns:IMathService_Addition_AppFaultDataFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMathService" type="tns:IMathService">
@@ -28,6 +33,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="AppFaultDataFault">
+        <soap:fault use="literal" name="AppFaultDataFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="MathService">

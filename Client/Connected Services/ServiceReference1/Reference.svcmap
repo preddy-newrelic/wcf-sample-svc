@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9b8aa06-424c-4141-95c4-513718879735" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4b64ac56-5cd9-4dca-a43e-17fbd1d11604" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="9be38ec1-ddc9-4426-a028-3294e18134b9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd0" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="131688dc-9904-4f2c-b86a-14339c01d1be" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd1" />
-    <MetadataFile FileName="MathService.wsdl" MetadataType="Wsdl" ID="adfba905-04e3-4f4f-92a2-24356e42876a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?wsdl" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="56217561-9c04-49e9-9dca-1dfe2ac0577c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="e666824b-89cc-4f97-8ba8-a8680c14468d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="21f44fa5-7aa7-4d4f-abb9-d272a6cfea4b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="f94c2be5-71ef-46c5-95b1-c4c45ebb1d4b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?xsd=xsd2" />
+    <MetadataFile FileName="MathService.wsdl" MetadataType="Wsdl" ID="3c7b25c8-a4c9-4539-8157-13811224a0b4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="66177533-30a9-4d0d-b512-2296b0b69a00" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ArupConsoleService/MathService/?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

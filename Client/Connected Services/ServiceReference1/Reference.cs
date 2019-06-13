@@ -9,17 +9,65 @@
 //------------------------------------------------------------------------------
 
 namespace Client.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AppFaultData", Namespace="http://schemas.datacontract.org/2004/07/ArupConsoleService")]
+    [System.SerializableAttribute()]
+    public partial class AppFaultData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ErrorCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMathService")]
     public interface IMathService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathService/Addition", ReplyAction="http://tempuri.org/IMathService/AdditionResponse")]
-        int Addition(int a, int b);
+        [System.ServiceModel.FaultContractAttribute(typeof(Client.ServiceReference1.AppFaultData), Action="http://tempuri.org/IMathService/AdditionAppFaultDataFault", Name="AppFaultData", Namespace="http://schemas.datacontract.org/2004/07/ArupConsoleService")]
+        int Addition(string a, string b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathService/Addition", ReplyAction="http://tempuri.org/IMathService/AdditionResponse")]
-        System.Threading.Tasks.Task<int> AdditionAsync(int a, int b);
+        System.Threading.Tasks.Task<int> AdditionAsync(string a, string b);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,11 +97,11 @@ namespace Client.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public int Addition(int a, int b) {
+        public int Addition(string a, string b) {
             return base.Channel.Addition(a, b);
         }
         
-        public System.Threading.Tasks.Task<int> AdditionAsync(int a, int b) {
+        public System.Threading.Tasks.Task<int> AdditionAsync(string a, string b) {
             return base.Channel.AdditionAsync(a, b);
         }
     }

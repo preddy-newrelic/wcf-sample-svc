@@ -12,6 +12,8 @@ namespace ArupConsoleService
     public interface IMathService
     {
         [OperationContract]
-        int Addition(int a, int b);
+        [FaultContract(typeof(AppFaultData))]
+        //[FaultContract(typeof(ApplicationException))]
+        int Addition(string a, string b);
     }
 }
